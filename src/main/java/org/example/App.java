@@ -82,7 +82,7 @@ public class App
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-Type", "application/json");
             //Add Api Token here
-            connection.setRequestProperty("Authorization","b08cf13e9c52876b7ad59730628e55c3");
+            connection.setRequestProperty("Authorization","YOUR API KEY");
 
             // read response
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

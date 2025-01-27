@@ -13,7 +13,7 @@ import java.util.Objects;
 public class App
 {
     public static void main(String[] args) {
-        String bestCustomer = getBestCustomer(10, 2024);
+        String bestCustomer = getBestCustomer(1, 2025);
         System.out.println(bestCustomer);
     }
 
@@ -60,7 +60,7 @@ public class App
         // get all customers to find customer name
         String allCustomers = makeRequest("Contact");
 
-        JSONObject allContactsJson = new JSONObject(allInvoices);
+        JSONObject allContactsJson = new JSONObject(allCustomers);
         JSONArray contactsArray = allContactsJson.getJSONArray("objects");
         for(int i = 0; i < contactsArray.length(); i++) {
             JSONObject currentObject = contactsArray.getJSONObject(i);
@@ -82,7 +82,7 @@ public class App
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-Type", "application/json");
             //Add Api Token here
-            connection.setRequestProperty("Authorization","YOUR API KEY");
+            connection.setRequestProperty("Authorization","b08cf13e9c52876b7ad59730628e55c3");
 
             // read response
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

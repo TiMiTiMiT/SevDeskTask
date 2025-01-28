@@ -20,6 +20,7 @@ public class App
     public static String getBestCustomer(int month, int year){
 
         // get all invoices during month of given date
+
         String allInvoices = makeRequest("Invoice");
 
         JSONObject allInvoicesJson = new JSONObject(allInvoices);
@@ -44,7 +45,7 @@ public class App
             }
         }
 
-        // get customer with highest sumn of sumNet
+        // get customer with the highest sum of sumNet
         String highestCustomerId = "";
         int highestSum = 0;
 
@@ -74,7 +75,7 @@ public class App
         return "No Customer Found";
     }
 
-    public static String makeRequest(String apiRoute){
+    public static String makeRequest(String apiRoute) {
         try{
             URL url = new URL("https://my.sevdesk.de/api/v1/" + apiRoute);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -95,13 +96,11 @@ public class App
 
             return response.toString();
         } catch (Exception e){
-            e.printStackTrace();
+            throw new RuntimeException("Error with the HTTP Request");
         }
-
-        return "no response";
     }
 
-    private static void addOrUpdateAmount(Map<String, Integer> map, String id, int amount) {
+    public static void addOrUpdateAmount(Map<String, Integer> map, String id, int amount) {
         if (map.containsKey(id)) {
             // If it exists, increase the amount
             map.put(id, map.get(id) + amount);

@@ -6,6 +6,7 @@
   - I finished the Task at ca. 16:00, 17.01.2025
     - There was some delay until the creating of the repo 
   - During that time I wasted around 30 - 45 min only to setup JSONObject
+  - 17:10 - 17:20 testet code and found a bug/fixed the bug
 
 ## API Key
 - replace the "YOUR API KEY" string inside of the makeRequest() methode with a valide API key
